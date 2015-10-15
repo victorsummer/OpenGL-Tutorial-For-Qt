@@ -9,6 +9,8 @@
 #include <QApplication>
 #include <QOpenGLShader>
 
+#include <QOpenGLFunctions_4_5_Core>
+
 #include "RedTriangle.hpp"
 
 RedTriangle::RedTriangle(QWidget *parent)
