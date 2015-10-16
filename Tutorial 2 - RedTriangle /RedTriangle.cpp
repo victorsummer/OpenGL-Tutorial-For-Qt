@@ -40,11 +40,7 @@ void RedTriangle::initializeGL()
     glGenVertexArrays(1, &mVertexArrayId);
     glBindVertexArray(mVertexArrayId);
 
-    mProgram.addShaderFromSourceFile(QOpenGLShader::Vertex, ":/glsl/SimpleVertexShader.vertexshader");
-    mProgram.addShaderFromSourceFile(QOpenGLShader::Fragment, ":/glsl/SimpleFragmentShader.fragmentshader");
-    mProgram.link();
-
-    static const GLfloat gVertexBufferData[] =
+    GLfloat gVertexBufferData[] =
     {
         -1.0f, -1.0f, 0.0f,
          1.0f, -1.0f, 0.0f,
@@ -54,6 +50,10 @@ void RedTriangle::initializeGL()
     glGenBuffers(1, &mVertexBuffer);
     glBindBuffer(GL_ARRAY_BUFFER, mVertexBuffer);
     glBufferData(GL_ARRAY_BUFFER, sizeof(gVertexBufferData), gVertexBufferData, GL_STATIC_DRAW);
+
+    mProgram.addShaderFromSourceFile(QOpenGLShader::Vertex, ":/glsl/SimpleVertexShader.vertexshader");
+    mProgram.addShaderFromSourceFile(QOpenGLShader::Fragment, ":/glsl/SimpleFragmentShader.fragmentshader");
+    mProgram.link();
 }
 
 void RedTriangle::paintGL()
