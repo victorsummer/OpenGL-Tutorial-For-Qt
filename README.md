@@ -9,4 +9,4 @@ You might as well make some modifications in order to port them to Windows or Ma
 
 And welcome to visit my blog for more information:
 
-www.victorsummer.com
+http://www.victorsummer.com/categories/OpenGL-Tutorial-For-Qt/
